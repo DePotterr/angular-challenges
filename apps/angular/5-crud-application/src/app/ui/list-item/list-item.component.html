@@ -1,0 +1,25 @@
+<div class="mb-2 flex items-center">
+  <ng-container
+    [ngTemplateOutlet]="
+      itemContentTemplate?.templateRef || defaultItemContentTemplate
+    "></ng-container>
+
+  <ng-template #defaultItemContentTemplate>
+    No content available
+  </ng-template>
+
+  <div>
+    <button
+      id="btn-update"
+      class="mx-1 rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+      (click)="onUpdate.emit()">
+      Update
+    </button>
+    <button
+      id="btn-delete"
+      class="rounded-full bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+      (click)="onDelete.emit()">
+      Delete
+    </button>
+  </div>
+</div>
